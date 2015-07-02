@@ -9,3 +9,34 @@
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+#
+# Go Lang
+#
+
+GOHOME="$HOME/go"
+GOPATH="$HOME/go"
+GOROOT="/usr/lib/go"
+
+PATH="$GOPATH/bin:$PATH"
+
+#
+# NPM
+#
+
+NPM_PACKAGES="$HOME/.local/share/npm"
+MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+
+PATH="$NPM_PACKAGES/bin:$PATH"
+
+#
+# Tools
+#
+
+PATH="$HOME/Tools/bin:$PATH"
+
+# Load local zshenv
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/local/zshenv.local" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/local/zshenv.local"
+fi
