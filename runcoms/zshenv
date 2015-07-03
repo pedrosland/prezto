@@ -14,9 +14,9 @@ fi
 # Go Lang
 #
 
-GOHOME="$HOME/go"
-GOPATH="$HOME/go"
-GOROOT="/usr/lib/go"
+export GOHOME="$HOME/go"
+export GOPATH="$HOME/go"
+export GOROOT="/usr/lib/go"
 
 PATH="$GOPATH/bin:$PATH"
 
@@ -24,9 +24,9 @@ PATH="$GOPATH/bin:$PATH"
 # NPM
 #
 
-NPM_PACKAGES="$HOME/.local/share/npm"
-MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export NPM_PACKAGES="$HOME/.local/share/npm"
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 PATH="$NPM_PACKAGES/bin:$PATH"
 
