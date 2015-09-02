@@ -16,3 +16,7 @@ fi
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/local/zshrc.local" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/local/zshrc.local"
 fi
+
+# Key bindings for IntelliJ
+bindkey '\e[H' beginning-of-line
+bindkey '\e[F' end-of-line

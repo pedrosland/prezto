@@ -24,11 +24,24 @@ PATH="$GOPATH/bin:$PATH"
 # NPM
 #
 
-export NPM_PACKAGES="$HOME/.local/share/npm"
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export NVM_DIR="$HOME/.nvm"
+# Load NVM if available
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  . "$NVM_DIR/nvm.sh"
 
-PATH="$NPM_PACKAGES/bin:$PATH"
+  nvm use default > /dev/null
+else
+  export NPM_PACKAGES="$HOME/.local/share/npm"
+  export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+  export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+
+  PATH="$NPM_PACKAGES/bin:$PATH"
+fi
+
+export GOPATH="$HOME/Development/go"
+export GOROOT="/usr/lib/golang"
+
+export PATH="$GOPATH/bin/:$PATH"
 
 #
 # Tools
